@@ -5,17 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todolist</title>
+
+    <!-- adding a styles to the website -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <form action="/" method="post">
-        <label for="todo">Todo</label>
-        <input type="text" id="todo" name="newTodo">
-        <button type="submit">Add</button>
-    </form>
-    <ul>
+    <div class="box" id="heading">
+        <h1><%=kindOfDay%></h1>
+    </div>
+    <div class="box">
+        <form action="/" class="item" method="post">
+            <input type="text" id="todo" name="todoItem" placeholder="New Todo" autocomplete="off">
+            <button type="submit">+</button>
+        </form>
+            <!-- using scriptler to do the loop  -->
         <% for(let i=0; i<todoLists.length; i++) { %>
-            <li><%=  todoLists[i] %> </li>
-       <% } %> 
+        <div class="item">
+            <input type="checkbox">
+            <p><%= todoLists[i] %> </p>
+        </div>
+    <% } %> 
+    </div>
+    <div class="box">
+
+    </div>
+    
+    <ul>
+       
     </ul>
 </body>
 </html>
